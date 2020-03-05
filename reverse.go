@@ -1,9 +1,12 @@
 package stringutil
 
-func Reverse(s string) string {
-	r := []rune(s)
-	for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
-		r[i], r[j] = r[j], r[i]
+func Reverse(s string, b bool) string {
+	if b == true {
+		r := []rune(s)
+		for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
+			r[i], r[j] = r[j], r[i]
+		}
+		return string(r)
 	}
-	return string(r)
+	return s
 }
